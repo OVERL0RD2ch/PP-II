@@ -14,7 +14,7 @@ namespace ComplexClass
             Complex c2 = new Complex(7, 9);
 
             Complex result = c1 + c2;
-            public static Complex operator + (Complex c1, Complex c2);
+            
 
             Console.WriteLine(result);
 
