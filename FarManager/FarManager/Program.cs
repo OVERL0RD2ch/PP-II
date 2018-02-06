@@ -12,7 +12,9 @@ namespace SimpleFarManager
     {
 
         static void showState(DirectoryInfo cur, int pos)
+            
         {
+            Console.Clear();
             FileSystemInfo[] infos = cur.GetFileSystemInfos();
 
             for (int i = 0; i < infos.Length; i++)
@@ -53,12 +55,18 @@ namespace SimpleFarManager
                     case ConsoleKey.UpArrow:
                         pos--;
                         if (pos < 0)
+                        {
                             pos = dir.GetFileSystemInfos().Length - 1;
+                            Console.BackgroundColor = ConsoleColor.Black;
+                        }
                         break;
                     case ConsoleKey.DownArrow:
                         pos++;
                         if (pos >= dir.GetFileSystemInfos().Length)
+                        {
                             pos = 0;
+                            Console.BackgroundColor = ConsoleColor.Black;
+                        }
                         break;
                     case ConsoleKey.Enter:
                         FileSystemInfo f = dir.GetFileSystemInfos()[pos];
