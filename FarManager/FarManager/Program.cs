@@ -62,16 +62,35 @@ namespace SimpleFarManager
                         break;
                     case ConsoleKey.Enter:
                         FileSystemInfo f = dir.GetFileSystemInfos()[pos];
+                        int size = f.FullName.Length;
+                        bool da = false;
+                        if (f.FullName[size-3] == 't' && f.FullName[size - 2]=='x' && f.FullName[size - 1] == 't')
+                        {
+                            da = true;
+                        }
                         if (f.GetType() == typeof(DirectoryInfo))
                         {
                             dir = new DirectoryInfo(f.FullName);
                             pos = 0;
                         }
+                        else if (da ==true)
+                        {
+                             Console.Clear();
+                             FileStream fs = new FileStream(f.FullName, FileMode.Open, FileAccess.Read);
+                             StreamReader sr = new StreamReader(fs);
+                             String line = sr.ReadToEnd();
+                             Console.WriteLine(line);
+                             Console.ReadKey();
+                        }
                         else
                         {
-                            Process.Start(f.FullName);
+                            Console.Clear();
+                            Console.WriteLine("SMOrc, It's not txt file");
+                            Console.ReadKey();
+
                         }
                         break;
+                
                     case ConsoleKey.Escape:
                         dir = dir.Parent;
                         break;
