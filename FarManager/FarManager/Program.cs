@@ -57,7 +57,6 @@ namespace SimpleFarManager
                         if (pos < 0)
                         {
                             pos = dir.GetFileSystemInfos().Length - 1;
-                            Console.BackgroundColor = ConsoleColor.Black;
                         }
                         break;
                     case ConsoleKey.DownArrow:
