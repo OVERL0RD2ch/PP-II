@@ -28,12 +28,6 @@ namespace maxmin
             }
             Console.WriteLine("Max" + " = " + max + "\n" + "Min" + " = " + min);
             Console.ReadKey();
-
-
-
-
-
-
         }
     }
     
