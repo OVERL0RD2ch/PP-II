@@ -36,21 +36,23 @@ namespace SnakeExample
 
             body[0].x = body[0].x + dx;
             body[0].y = body[0].y + dy;
-
-            // TODO: can snake eat?
-            // TODO: check for collision with wall 
-            // TODO: check for collision with itself (snake)
-            // TODO: check for collision with border (console border (maximum width and height))
-            // TODO: if necessary, load new level of the wall
-
+            Snakeu();                        
             CollisionWithWall();
+            //break;
             if (CanEat())
             {
                 Game.food.SetRandomPosition();
             }
         }
 
-
+        public void Snakeu()
+        {
+            for (int i = 1; i<Game.snake.body.Count; i++)
+            {
+                if (Game.snake.body[0].x == Game.snake.body[i].x && Game.snake.body[0].y == Game.snake.body[i].y)
+                    Game.GameOver = true;                
+            }
+        }
         public void CollisionWithWall()
         {
             if (body[0].x < 0)
@@ -67,9 +69,8 @@ namespace SnakeExample
         {
             if (Game.food.location.x == body[0].x && Game.food.location.y == body[0].y)
             {
-                //body.Add(new Point(body[0].x, body[0].y)); // add position of head
-                //body.Add(new Point(food.location.x, food.location.y)); // add position of food same as head
-                body.Add(new Point(body[body.Count - 1].x, body[body.Count - 1].y)); // add position of last point
+                
+                body.Add(new Point(body[body.Count - 1].x, body[body.Count - 1].y)); 
                 return true;
             }
             return false;

@@ -11,7 +11,7 @@ namespace maxmin
     {
         static bool prime(int n)
         {
-            if (n == 1 && n == 0)
+            if (n <=2)
                 return false;
             for (int i = 2; i <= Math.Sqrt(n); i++)
             {
@@ -22,7 +22,6 @@ namespace maxmin
         }
             static void Main(string[] args)
         {
-            //int n = int.Parse(Console.ReadLine());
             StreamReader file1 = new StreamReader(@"C:\test\file1.txt");
             string s = file1.ReadLine();
             file1.Close();

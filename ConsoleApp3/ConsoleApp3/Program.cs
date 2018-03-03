@@ -39,5 +39,15 @@ namespace lab1
             return a + "\n" + b + "\n" + c + "\n" + area + "\n" + perimetr;
         }
     }
-
+    class MainClass
+    {
+        static void Main(string[] args)
+        {
+            Triangle a = new Triangle();
+            a.TriangleArea();
+            a.TrianglePerimetr();
+            Console.WriteLine(a);
+            Console.ReadKey();
+        }
+    }
 }

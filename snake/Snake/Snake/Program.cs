@@ -64,8 +64,7 @@ namespace SnakeExample
             Thread t = new Thread(MoveSnakeThread);
             t.Start();
 
-            /*Timer t = new Timer(MoveSnake);
-            t.Change(0, 100);*/
+            
 
             while (!Game.GameOver)
             {
@@ -73,15 +72,23 @@ namespace SnakeExample
                 switch (btn.Key)
                 {
                     case ConsoleKey.UpArrow:
+                        if (direction == 2)
+                            break;
                         direction = 4;
                         break;
                     case ConsoleKey.DownArrow:
+                        if (direction == 4)
+                            break;
                         direction = 2;
                         break;
                     case ConsoleKey.LeftArrow:
+                        if (direction == 1)
+                            break;
                         direction = 3;
                         break;
                     case ConsoleKey.RightArrow:
+                        if (direction == 3)
+                            break;
                         direction = 1;
                         break;
                 }

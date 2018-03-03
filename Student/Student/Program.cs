@@ -18,7 +18,12 @@ namespace ClassExample
             lastName = "Kozlov";
             gpa = 4;
         }
-
+        public Student(string a, string b, float c)
+        {
+            firstName = a;
+            lastName = b;
+            gpa = c;
+        }
         public override string ToString()
         {
             return this.firstName + " " + lastName + " " + gpa;
@@ -31,9 +36,9 @@ namespace ClassExample
         static void Main(string[] args)
         {
 
-            Student s = new Student();
+            Student a = new Student();
 
-            Console.WriteLine(s);
+            Console.WriteLine(a);
 
             Console.ReadKey();
 

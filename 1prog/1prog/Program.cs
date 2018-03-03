@@ -10,9 +10,8 @@ namespace Prime
     {
         static bool prime(int a)
         {
-            if (a <= 1)
+            if (a <= 2)
             {
-                
                 return false;
             }
             for (int i = 2; i <= Math.Sqrt(a); i++)

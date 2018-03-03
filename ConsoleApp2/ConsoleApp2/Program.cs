@@ -17,10 +17,7 @@ namespace Lab1
             area = Math.PI *r *r;
             l = Math.PI *2 *r;
         }
-        public Circle(int radius)
-        {
-            r = radius;
-        }
+        
         public void findarea()
         {
             area = Math.PI * r * r;
@@ -34,6 +31,17 @@ namespace Lab1
         public override string ToString()
         {
             return l + "\n" + r + "\n" + area;
+        }
+    }
+    class MainClass
+    {
+        static void Main(string[] args)
+        {
+            Circle r = new Circle();
+            r.findarea();
+            r.findlength();
+            Console.WriteLine(r);
+            Console.ReadKey();
         }
     }
 }

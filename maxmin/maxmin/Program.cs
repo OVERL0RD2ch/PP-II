@@ -11,7 +11,6 @@ namespace maxmin
     {
         static void Main(string[] args)
         {
-            //int n = int.Parse(Console.ReadLine());
             StreamReader file1 = new StreamReader(@"C:\test\file1.txt");
             string s = file1.ReadLine();
             string[] s1 = s.Split(' ');
