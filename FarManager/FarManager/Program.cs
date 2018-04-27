@@ -19,20 +19,28 @@ namespace SimpleFarManager
 
             for (int i = 0; i < infos.Length; i++)
             {
-                
-                if (i == pos)
+
+                if (pos == i)
+                {
                     Console.BackgroundColor = ConsoleColor.White;
+                    
+                }
                 else
+                {
                     Console.BackgroundColor = ConsoleColor.Black;
-                    
-                                
-                if(infos[i].GetType() == typeof(DirectoryInfo))
-                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                if (infos[i].GetType() == typeof(DirectoryInfo))
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                }
                 else
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+
                 Console.WriteLine(infos[i].Name);
             }
+            
 
 
         }
@@ -61,7 +69,7 @@ namespace SimpleFarManager
                         break;
                     case ConsoleKey.DownArrow:
                         pos++;
-                        if (pos >= dir.GetFileSystemInfos().Length)
+                        if (pos >= dir.GetFileSystemInfos().Length - 1)
                         {
                             pos = 0;
                             Console.BackgroundColor = ConsoleColor.Black;

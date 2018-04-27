@@ -15,8 +15,8 @@ namespace maxmin
             string s = file1.ReadLine();
             string[] s1 = s.Split(' ');
             int n;
-            int max = -1000000000;
-            int min = 1000000000;
+            int max = int.Parse(s1[0]);
+            int min = int.Parse(s1[0]);
             for (int i = 0; i < s1.Length; i++)
             {
                 n = int.Parse(s1[i]);
@@ -24,6 +24,8 @@ namespace maxmin
                     max = n;
                 if (min > n)
                     min = n;
+                    
+                
             }
             Console.WriteLine("Max" + " = " + max + "\n" + "Min" + " = " + min);
             Console.ReadKey();

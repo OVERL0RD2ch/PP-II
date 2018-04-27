@@ -8,20 +8,19 @@ namespace Prime
 {
     class Program
     {
-        static bool prime(int a)
+        static bool prime(int n)
         {
-            if (a <= 2)
+            if (n <= 2)
             {
                 return false;
             }
-            for (int i = 2; i <= Math.Sqrt(a); i++)
-            {
-                if (a % i == 0)
+            for (int i=2; i <= Math.Sqrt(n); i++)
+            { 
+                if (n % i == 0)
                     return false;
+                
             }
-             return true;
-
-
+            else return true;
         }
         static void Main(string[] args)
         {
